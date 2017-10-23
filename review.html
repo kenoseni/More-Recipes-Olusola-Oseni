@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Review</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        
+        <!-- Your custom styles (optional) -->
+        <link href="css/style2.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-md navbar-dark flex-row">
+                <div class="container">
+                    <!-- Navbar brand -->
+                    <a class="navbar-brand" href="#"><h5><i id="icon" class="fa fa-cutlery"></i> <i>More </i>Recipes</h5></a>
+        
+                    <!-- Collapse button -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            
+                    <!-- Collapsible content -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+                        <!-- Links -->
+                        <ul class="nav navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a id="home" class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a id="catalog" class="nav-link" href="catalog.html">Review</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Popular Recipes</a>
+                                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Jollof Rice and Chicken</a>
+                                    <a class="dropdown-item" href="#">Chocolate Caramel Brownie</a>
+                                    <a class="dropdown-item" href="#">Warm Peanut Butter Bananas</a>
+                                    <a class="dropdown-item" href="#">Chiken Apple Pasta</a>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        <!-- Links -->
+                        <!-- Search form -->
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="text" placeholder="find recipes" aria-label="Search">
+                        </form>
+                    </div>
+                    <!-- Collapsible content -->
+                </div>
+            </nav>
+            <!--/.Navbar-->         
+        </header>
+        <main>
+            <div class="container">                                             
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="text-center font-weight-bold">
+                            <h4>Recipe Name</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="card mb-3">
+                            <img class="card-img-top" src="img/recipe4.jpg" alt="Card image cap">
+                                        
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-success">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <span class="badge badge-light">90</span>
+                                <span class="sr-only">likes</span>
+                            </button>
+                            <button type="button" class="btn btn-danger">
+                                <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> <span class="badge badge-light">10</span>
+                                <span class="sr-only">dislikes</span>
+                            </button>
+                            <!-- Use any element to open the sidenav -->
+                            <span onclick="openNav()" class="badge badge-pill badge-success float-right"><i class="fa fa-plus" aria-hidden="true"></i>Add review</span> 
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+
+
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div id="recipeDescription">
+                            <label for="description" class="font-weight-bold"><i>Description: </i></label>
+                            <div id="description" class="">.......................................................................................................................................................</div>
+                        </div><hr />
+                        <div id="recipeIngredients">
+                            <label for="ingredients" class="font-weight-bold"><i>Ingredients: </i></label>
+                            <div id="description" class="">.......................................................................................................................................................</div>
+                        </div><hr />
+                        <div id="recipeDirections">
+                            <label for="ingredients" class="font-weight-bold"><i>Directions: </i></label>
+                            <div id="description" class="">.......................................................................................................................................................</div>
+                        </div><hr />
+                        <div id="recipeDirections">
+                            <label for="ingredients" class="font-weight-bold"><i>Time(min): </i></label>
+                            <div id="description" class="">.......................................................................................................................................................</div>
+                        </div><hr />
+        
+                    <div class="col-md-4"></div>
+                </div>
+
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div id="reviews" class="">
+                            <h4>Reviews</h4>
+                        </div>
+                        <br>
+                        <div class="list-group">
+                            <div class="list-group-item">
+                                <img src="./img/recipe4.jpg" alt="" class="img-fluid rounded-circle imgsize">
+                                <label class="" for="name">Name </label>
+                                <p>Review</p>
+                            </div> 
+                        </div> 
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <br>
+            </div>
+            
+
+            <div id="mySidenav" class="sidenav col-xs-12">
+                <img src="./img/recipe4.jpg" alt="" class="img-fluid rounded-circle imgsize">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <form action="" method="post" role="form" id="formreview">
+                    <div class="form-group text-white">
+                        <label class="control-label font-weight-bold" for="name"><i class="fa fa-user" aria-hidden="true"></i> Name: </label>
+                        <input type="name" class="form-control" id="" required>
+                    </div>
+                    <div class="form-group text-white">
+                        <label class="control-label font-weight-bold" for="name"><i class="fa fa-comment" aria-hidden="true"></i> Review: </label>
+                        <textarea rows="4" cols="50" name="comment" form="formreview"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-light font-weight-bold">Submit</button>
+                </form> 
+            </div>
+
+        </main>
+        <!--Footer-->
+        <footer class="page-footer">
+            <!--Copyright-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                        <div class="col-md-4 text-white">
+                            © 2017 Copyright: <a class="text-white" href="https://www.morerecipes.com"> morerecipes.com </a>
+                        </div>
+                    <div class="col-md-4"></div>
+                    </div>
+                </div>
+        </footer>
+            <!--/.Footer-->
+        
+
+        <!-- SCRIPTS -->
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <script src="./js/myFile.js"></script>
+    </body>
+</html>
