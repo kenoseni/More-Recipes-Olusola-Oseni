@@ -1,6 +1,6 @@
-import express from 'express'
-import volleyball from 'volleyball'
-import bodyParser from 'body-parser'
+import express from 'express';
+import volleyball from 'volleyball';
+import bodyParser from 'body-parser';
 
 // Set up the express app
 const app = express();
