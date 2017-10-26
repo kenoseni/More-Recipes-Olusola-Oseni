@@ -32,6 +32,33 @@ export default {
                 res.status(404).json({message: "no recipes added"})
             }
         })
+    },
+
+    modify(req, res) {
+        return new Promise ((resolve, reject) => {
+            for (let i =0; i<recipeStore.length; i++) {
+                if(recipeStore[i].id === parseInt(req.params.recipeId, 10)) {
+                    recipeStore[i].name == req.body.name
+                    recipeStore[i].ingredients == req.body.ingredients
+                    recipeStore[i].directions == req.body.directions
+                    recipeStore[i].upvotes == req.body.upvotes
+                    recipeStore[i].downvotes == req.body.downvotes
+                    recipeStore[i].favorite == req.body.favorite
+                    recipeStore[i].view == req.body.view
+                    
+                }
+                resolve(recipeStore)
+                
+            }
+            reject({message: "no recipe modified"})
+        })
+        .then(recipe => res.status(200).send({message: "recipe modified"}))
+        .catch(error => {
+            if (error.message === "no recipe modified") {
+                res.status(404).json({message: "no recipes modified"})
+            }
+        })
     }
     
 }
+
