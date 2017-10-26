@@ -79,6 +79,24 @@ export default {
             }
         })
 
+    }, 
+    findOne (req, res) {
+        return new Promise ((resolve, reject) => {
+            for (let i = 0; i < recipeStore.length; i++) {
+                if(recipeStore[i].id === parseInt(req.params.recipeId, 10)) {
+                    
+                    resolve(recipeStore[i]);
+                }
+            }
+            reject({message: "recipe not found"})
+        })
+        .then((recipe) => res.status(200).send({recipe, message: "recipe found"}))
+        .catch(error => {
+            if (error.message === "no recipe modified") {
+                res.status(404).json({message: "recipe not found"})
+            }
+        })
+
     }
     
 }
