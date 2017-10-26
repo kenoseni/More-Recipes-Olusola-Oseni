@@ -1,10 +1,12 @@
 import recipes from "../../recipes"
 
+const recipeStore = [...recipes]
+
 export default {
     list (req, res) {
         return new Promise((resolve, reject) => {
-            if(recipes) {
-                resolve(res.json(recipes))
+            if(recipeStore ) {
+                resolve(res.json(recipeStore))
             }
             reject({message: "no recipes found"})
         })
@@ -14,5 +16,6 @@ export default {
                 res.status(404).json({message: "no recipes found"})
             }
         })       
-    }, 
+    }
+    
 }
