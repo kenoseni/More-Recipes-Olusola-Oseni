@@ -1,8 +1,9 @@
 import recipesController from '../controllers'
 
 export default (app) => {
-    app.get('/recipes', recipesController.list)
-    app.post('/recipes', recipesController.create)
-    app.put('/recipes/:recipeId', recipesController.modify)
+    app.get('/api/recipes', recipesController.list)
+    app.post('/api/recipes', recipesController.create)
+    app.put('/api/recipes/:recipeId', recipesController.modify)
+    app.delete('/api/recipes/:recipeId', recipesController.delete)
     
 }
