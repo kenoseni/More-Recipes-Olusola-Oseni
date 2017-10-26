@@ -30,3 +30,4 @@ const recipes = [
         view : 20
     }
 ]
+export default recipes;
