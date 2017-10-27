@@ -7,7 +7,7 @@ export default {
       if (recipeStore) {
         resolve(res.json(recipeStore));
       }
-      Promise.reject(new Error({ message: 'no recipe modified' }));
+      Promise.reject(new Error({ message: 'no recipes found' }));
     })
       .then(data => res.status(200).send(data))
       .catch((error) => {
@@ -22,12 +22,12 @@ export default {
         recipeStore.push(req.body);
         resolve(recipeStore);
       }
-      Promise.reject(new Error({ message: 'no recipe modified' }));
+      Promise.reject(new Error({ message: 'no recipe added' }));
     })
-      .then(() => res.status(200).send({ message: 'recipe added' }))
+      .then(() => res.status(201).send({ message: 'recipe added' }))
       .catch((error) => {
         if (error.message === 'no recipe added') {
-          res.status(404).json({ message: 'no recipes added' });
+          res.status(404).json({ message: 'no recipe added' });
         }
       });
   },
@@ -52,7 +52,7 @@ export default {
       .then(() => res.status(200).send({ message: 'recipe modified' }))
       .catch((error) => {
         if (error.message === 'no recipe modified') {
-          res.status(404).json({ message: 'no recipes modified' });
+          res.status(404).json({ message: 'no recipe modified' });
         }
       });
   },
@@ -64,12 +64,12 @@ export default {
           resolve();
         }
       }
-      Promise.reject(new Error({ message: 'no recipe modified' }));
+      Promise.reject(new Error({ message: 'no recipe deleted' }));
     })
       .then(() => res.status(200).send({ message: 'recipe deleted' }))
       .catch((error) => {
         if (error.message === 'no recipe modified') {
-          res.status(404).json({ message: 'no recipes deleted' });
+          res.status(404).json({ message: 'no recipe deleted' });
         }
       });
   },
@@ -80,7 +80,7 @@ export default {
           resolve(recipeStore[i]);
         }
       }
-      Promise.reject(new Error({ message: 'no recipe modified' }));
+      Promise.reject(new Error({ message: 'recipe not found' }));
     })
       .then(recipe => res.status(200).send({ recipe, message: 'recipe found' }))
       .catch((error) => {
