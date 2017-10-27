@@ -43,13 +43,13 @@ export default {
           recipeStore[i].downvotes = req.body.downvotes;
           recipeStore[i].favorite = req.body.favorite;
           recipeStore[i].view = req.body.view;
-          resolve();
+          resolve(recipeStore[i]);
         }
       }
       Promise.reject(new Error({ message: 'no recipe modified' }));
     })
 
-      .then(() => res.status(200).send({ message: 'recipe modified' }))
+      .then((recipe) => res.status(201).send({ message: 'recipe modified', recipe}))
       .catch((error) => {
         if (error.message === 'no recipe modified') {
           res.status(404).json({ message: 'no recipe modified' });
@@ -82,7 +82,7 @@ export default {
       }
       Promise.reject(new Error({ message: 'recipe not found' }));
     })
-      .then(recipe => res.status(200).send({ recipe, message: 'recipe found' }))
+      .then(recipe => res.status(200).send({ recipe, message: 'recipe found', recipe}))
       .catch((error) => {
         if (error.message === 'no recipe modified') {
           res.status(404).json({ message: 'recipe not found' });
