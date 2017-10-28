@@ -4,20 +4,22 @@ const recipes = [
     name: 'Jollof Rice and Chicken',
     ingredients: ['rice', 'salt', 'maggi', 'vegetable oil', 'onions', 'tomatoes', 'pepper'],
     directions: 'let the vegetable oil boil for 5 min, add a paste of pepper, onions, maggi and tomatoes and let it boil for 10 min then wash the rice into the mixture and allow to boil ',
-    upvotes: 40,
-    downvotes: 5,
+    upvotes: 0,
+    downvotes: 0,
     favorite: 25,
     view: 150,
+    review:[]
   },
   {
     id: 2,
     name: 'Pounded Yam and Egusi',
     ingredients: ['yam', 'salt', 'melon', 'vegetable', 'palm oil'],
     directions: 'cook the yam thoroughly and pound it to smoothness, then prepare the egusi soup',
-    upvotes: 80,
-    downvotes: 20,
+    upvotes: 0,
+    downvotes: 0,
     favorite: 50,
     view: 200,
+    review:[]
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const recipes = [
     downvotes: 10,
     favorite: 0,
     view: 20,
+    review:[]
   },
 ];
 export default recipes;
