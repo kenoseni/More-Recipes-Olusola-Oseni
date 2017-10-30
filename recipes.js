@@ -26,8 +26,8 @@ const recipes = [
     name: 'Chicken Apple Pasta',
     ingredients: ['chicken', 'cucumber', 'maggi', 'salt', 'pepper'],
     directions: 'cook and slice the chicken into bits, cut the cucumber and place it round it',
-    upvotes: 2,
-    downvotes: 10,
+    upvotes: 0,
+    downvotes: 0,
     favorite: 0,
     view: 20,
     review:[]
