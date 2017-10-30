@@ -15,6 +15,7 @@ const realRecipe = [{
     downvotes: 5,
     favorite: 25,
     view: 150,
+    review: []
   }, {
     name: 'Corn Meal',
     ingredients: ['corn', 'dry fish'],
@@ -23,6 +24,7 @@ const realRecipe = [{
     downvotes: 2,
     favorite: 1,
     view: 1,
+    review: ['taste is the difference']
 }];
 describe('More Recipes', () => {
     it('should allow a user to add a recipe', (done) => {
@@ -101,4 +103,5 @@ describe('More Recipes', () => {
           done();
         });
     });
+    
 });
