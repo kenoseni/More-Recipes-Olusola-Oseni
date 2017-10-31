@@ -23,7 +23,11 @@
   "homepage": "https://github.com/kenoseni/More-Recipes-Olusola-Oseni#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
     "express": "^4.16.2",
+    "pg": "^7.3.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.20.1",
     "volleyball": "^1.4.1"
   },
   "devDependencies": {
