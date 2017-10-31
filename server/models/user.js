@@ -56,9 +56,9 @@ export default (sequelize, DataTypes) => {
   });
   // associate the models
   User.associate = (models) => {
-    User.hasMany(models.Review, {
+    User.hasMany(models.Recipe, {
       foreignKey: 'userId',
-      as: 'reviews'
+      as: 'recipes'
     });
   };
   return User;
