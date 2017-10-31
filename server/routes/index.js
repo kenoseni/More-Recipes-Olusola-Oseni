@@ -1,5 +1,5 @@
 import controller from '../controllers';
-import validate from '../middleware';
+// import validate from '../middleware';
 
 const listController = controller.list;
 // const createController = controller.create;
@@ -21,4 +21,5 @@ export default (app) => {
   app.post('/api/recipes/:recipeId/upvote', upvoteController.upVote);
   app.post('/api/recipes/:recipeId/downvote', downvoteController.downVote);
   app.post('/api/v1/users/signup', signupController.signup);
+  app.post('/api/v1/users/signin', signupController.signin);
 };

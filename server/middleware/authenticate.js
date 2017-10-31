@@ -4,7 +4,6 @@ export default {
   // create a user token
   createToken(user) {
     const token = jwt.sign({
-      id: user.id,
       name: user.name,
       password: user.password
     }, process.env.SECRET, {

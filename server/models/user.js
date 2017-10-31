@@ -54,5 +54,12 @@ export default (sequelize, DataTypes) => {
       }
     }
   });
+  // associate the models
+  User.associate = (models) => {
+    User.hasMany(models.Review, {
+      foreignKey: 'userId',
+      as: 'reviews'
+    });
+  };
   return User;
 };

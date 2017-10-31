@@ -1,8 +1,10 @@
+import bcrypt from 'bcrypt';
 import db from '../models';
+
 import middleware from '../middleware';
 
 const User = db.User;
-const authenticate = middleware.authenticate.createToken;
+const authenticate = middleware.authenticate;
 
 export default {
   signup(req, res) {
@@ -24,7 +26,6 @@ export default {
       .findOne({
         where: {
           name: req.body.name,
-          password: req.body.password
         }
       })
       .then((user) => {
@@ -33,8 +34,17 @@ export default {
             message: 'user not found'
           });
         }
-        const token = authenticate(user);
-        res.status(200).send(user, token);
+        const encrypted = user.password;
+        bcrypt.compare(req.body.password, encrypted)
+          .then((correct) => {
+            if (!correct) {
+              res.status(401).send({
+                message: 'Incorrect password'
+              });
+            }
+          });
+        const token = authenticate.createToken(user);
+        res.status(200).send({ user, token });
       })
       .catch(error => res.status(400).send(error));
   }
