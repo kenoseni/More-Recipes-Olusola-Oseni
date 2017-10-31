@@ -1,10 +1,11 @@
-import create from './create.js';
-import remove from './remove.js';
-import findOne from './findOne.js';
-import list from './list.js';
-import modify from './modify.js';
-import review from './review.js';
-import vote from './vote.js';
+import create from './create';
+import remove from './remove';
+import findOne from './findOne';
+import list from './list';
+import modify from './modify';
+import review from './review';
+import vote from './vote';
+import userController from './user';
 
 export default {
   create,
@@ -13,5 +14,6 @@ export default {
   list,
   modify,
   review,
-  vote
-}
+  vote,
+  userController,
+};

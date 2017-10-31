@@ -1,2 +1,7 @@
-import validate from "./validation"
-export default validate
+import validate from './validation';
+import authenticate from './authenticate';
+
+export default{
+  validate,
+  authenticate
+};

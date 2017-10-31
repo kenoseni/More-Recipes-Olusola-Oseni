@@ -19,7 +19,6 @@ Object.keys(database).forEach((model) => {
   }
 });
 
-
 database.sequelize = sequelize;
 database.Sequelize = Sequelize;
 

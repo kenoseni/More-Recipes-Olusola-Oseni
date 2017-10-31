@@ -1,3 +1,5 @@
+import bcrypt from 'bcrypt';
+
 export default (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     name: {
@@ -14,7 +16,7 @@ export default (sequelize, DataTypes) => {
         }
       },
       set(value) {
-        this.setDataValue('name', title.toString().toLowerCase().trim());
+        this.setDataValue('name', value.toString().toLowerCase().trim());
       }
     },
     email: {
@@ -43,10 +45,14 @@ export default (sequelize, DataTypes) => {
           args: [8],
           msg: 'Password must contain a minimum of 8 characters'
         }
-      }
+      },
     }
   }, {
-    
+    hooks: {
+      afterValidate: (user) => {
+        user.password = bcrypt.hashSync(user.password, 10);
+      }
+    }
   });
   return User;
 };

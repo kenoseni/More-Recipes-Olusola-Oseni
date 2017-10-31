@@ -8,7 +8,7 @@ const recipes = [
     downvotes: 0,
     favorite: 25,
     view: 150,
-    review:[]
+    review: []
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const recipes = [
     downvotes: 0,
     favorite: 50,
     view: 200,
-    review:[]
+    review: []
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const recipes = [
     downvotes: 0,
     favorite: 0,
     view: 20,
-    review:[]
+    review: []
   },
 ];
 export default recipes;
