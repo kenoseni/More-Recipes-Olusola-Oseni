@@ -1,8 +1,20 @@
 import jwt from 'jsonwebtoken';
 
-export default {
-  // create a user token
-  createToken(user) {
+/**
+ * Class representing controller
+ *
+ * @class tokenController
+ */
+class tokenController {
+  /**
+   * create a token
+   *
+   * @static
+   * @param {object} user - The user object
+   * @return {object} Create a token
+   * @memberof tokenController
+   */
+  static createToken(user) {
     const token = jwt.sign({
       name: user.name,
       password: user.password
@@ -10,9 +22,20 @@ export default {
       expiresIn: 24 * 60 * 60
     });
     return token;
-  },
+  }
   // confirm the token
-  confirmToken(req, res, next) {
+
+  /**
+   * create a token
+   *
+   * @static
+   * @param {object} req - The request object
+   * @param {object} res - The response object
+   * @param {object} next - The next object
+   * @return {object} Create a token
+   * @memberof tokenController
+   */
+  static confirmToken(req, res, next) {
     const token = req.headers['x-access-token'];
     if (!token) {
       return res.status(403).send({
@@ -31,4 +54,5 @@ export default {
       });
     }
   }
-};
+}
+export default tokenController;

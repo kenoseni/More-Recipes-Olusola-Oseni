@@ -12,9 +12,8 @@ export default (sequelize, DataTypes) => {
           args: true,
           msg: 'Allows only alphanumeric characters'
         },
-        len: {
-          args: [2, 25],
-          msg: 'Recipe name should be between 2 and 25 characters'
+        set(value) {
+          this.setDataValue('name', value.toString().toLowerCase().trim());
         }
       }
     },
@@ -46,41 +45,21 @@ export default (sequelize, DataTypes) => {
         },
       }
     },
+    time: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     upvotes: {
-      type: DataTypes.NUMBER,
-      allowNull: false,
-      isNumeric: {
-        args: true,
-        msg: 'Allows only number'
-      },
-      isInt: {
-        args: true,
-        msg: 'Must be an integer'
-      },
+      type: DataTypes.INTEGER,
+      defaultValue: 0
     },
     downvotes: {
-      type: DataTypes.NUMBER,
-      allowNull: false,
-      isNumeric: {
-        args: true,
-        msg: 'Allows only number'
-      },
-      isInt: {
-        args: true,
-        msg: 'Must be an integer'
-      },
+      type: DataTypes.INTEGER,
+      defaultValue: 0
     },
-    view: {
-      type: DataTypes.NUMBER,
-      allowNull: false,
-      isNumeric: {
-        args: true,
-        msg: 'Allows only number'
-      },
-      isInt: {
-        args: true,
-        msg: 'Must be an integer'
-      }
+    views: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
     },
   });
   // associate the models
@@ -88,6 +67,14 @@ export default (sequelize, DataTypes) => {
     Recipe.belongsTo(models.User, {
       foreignKey: 'userId',
       as: 'recipes'
+    });
+    Recipe.hasMany(models.Review, {
+      foreignKey: 'recipeId',
+      as: 'reviews'
+    });
+    Recipe.hasMany(models.Favorite, {
+      foreignKey: 'recipeId',
+      as: 'favorites'
     });
   };
   return Recipe;
