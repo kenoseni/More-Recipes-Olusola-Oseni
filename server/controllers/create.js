@@ -1,4 +1,5 @@
-import recipes from '../../recipes'
+import recipes from '../../recipes';
+
 const recipeStore = [...recipes];
 export default {
   create(req, res) {
@@ -9,11 +10,11 @@ export default {
       }
       Promise.reject(new Error({ message: 'no recipe added' }));
     })
-      .then((recipe) => res.status(201).send({ message: 'recipe added', recipe}))
+      .then(recipe => res.status(201).send({ message: 'recipe added', recipe }))
       .catch((error) => {
         if (error.message === 'no recipe added') {
           res.status(404).json({ message: 'no recipe added' });
         }
       });
   }
-}
+};

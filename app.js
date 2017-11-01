@@ -1,19 +1,19 @@
 import express from 'express';
 import volleyball from 'volleyball';
 import bodyParser from 'body-parser';
-
+import route from './server/routes';
 // Set up the express app
 const app = express();
+require('dotenv').config();
 
 // Log requests to the console.
 app.use(volleyball);
 
-// Parse incoming requests data 
+// Parse incoming requests data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-import route from './server/routes'
-route(app)
+route(app);
 
 
 // Setup a default catch-all route that sends back a welcome message in JSON format.

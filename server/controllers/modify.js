@@ -1,4 +1,5 @@
-import recipes from '../../recipes'
+import recipes from '../../recipes';
+
 const recipeStore = [...recipes];
 export default {
   modify(req, res) {
@@ -17,12 +18,11 @@ export default {
       }
       Promise.reject(new Error({ message: 'no recipe modified' }));
     })
-
-      .then((recipe) => res.status(201).send({ message: 'recipe modified', recipe}))
+      .then(recipe => res.status(201).send({ message: 'recipe modified', recipe }))
       .catch((error) => {
         if (error.message === 'no recipe modified') {
           res.status(404).json({ message: 'no recipe modified' });
         }
       });
   }
-}
+};

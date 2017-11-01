@@ -1,4 +1,5 @@
-import recipes from '../../recipes'
+import recipes from '../../recipes';
+
 const recipeStore = [...recipes];
 export default {
   delete(req, res) {
@@ -18,4 +19,4 @@ export default {
         }
       });
   }
-}
+};
