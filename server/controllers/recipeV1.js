@@ -39,6 +39,38 @@ class recipeController {
       }))
       .catch(error => res.status(400).send(error));
   }
+  /**
+     * Modify the recipe added
+     *
+     * @static
+     * @param {object} req - The request object
+     * @param {object} res - The response object
+     * @return {object} Object representing the recipe modified
+     * @memberof recipeController
+     */
+  static modify(req, res) {
+    return db.Recipe
+      .find({
+        where: {
+          id: req.params.recipeId,
+          userId: req.decoded.user.id,
+        },
+      })
+      .then(recipe => recipe
+        .update({
+          name: req.body.title,
+          ingredients: req.body.ingredients,
+          directions: req.body.directions
+        }))
+      .then(modifiedRecipe => res.status(200).send({
+        status: 'Done',
+        message: 'Recipe modified successfully',
+        id: modifiedRecipe.id,
+        name: modifiedRecipe.title,
+        ingredients: modifiedRecipe.ingredients,
+        directions: modifiedRecipe.directions,
+      }))
+      .catch(error => res.status(400).send(error));
+  }
 }
 export default recipeController;
-
