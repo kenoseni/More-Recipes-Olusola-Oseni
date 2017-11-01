@@ -96,5 +96,24 @@ class recipeController {
       }))
       .catch(error => res.status(400).send(error));
   }
+  /**
+       * Get all recipes
+       *
+       * @static
+       * @param {object} req - The request object
+       * @param {object} res - The response object
+       * @return {object} Object of all recipes
+       * @memberof recipeController
+       */
+  static getAllRecipes(req, res) {
+    return db.Recipe
+      .findAll({
+        attributes: [
+          'id', 'name', 'ingredients', 'directions', 'time', 'upvotes', 'downvotes', 'views'
+        ],
+      })
+      .then(recipe => res.status(200).send(recipe))
+      .catch(error => res.status(400).send(error));
+  }
 }
 export default recipeController;
