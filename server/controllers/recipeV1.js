@@ -72,5 +72,29 @@ class recipeController {
       }))
       .catch(error => res.status(400).send(error));
   }
+  /**
+       * Delete a recipe added
+       *
+       * @static
+       * @param {object} req - The request object
+       * @param {object} res - The response object
+       * @return {object} a message that recipe was deleted successfully
+       * @memberof recipeController
+       */
+  static removeRecipe(req, res) {
+    return db.Recipe
+      .find({
+        where: {
+          id: req.params.recipeId,
+          userId: req.decoded.user.id,
+        }
+      })
+      .then(recipe => recipe.destroy())
+      .then(() => res.status(200).send({
+        status: 'Done',
+        message: 'Recipe deleted successfully'
+      }))
+      .catch(error => res.status(400).send(error));
+  }
 }
 export default recipeController;
