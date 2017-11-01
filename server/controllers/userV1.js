@@ -3,12 +3,26 @@ import db from '../models';
 
 import middleware from '../middleware';
 
-const User = db.User;
-const authenticate = middleware.authenticate;
+// const User = db.User;
+// const authenticate = middleware.authenticate;
 
-export default {
-  signup(req, res) {
-    return User
+/**
+ * Class representing controller
+ *
+ * @class userController
+ */
+class userController {
+  /**
+   * Register a user on the platform
+   *
+   * @static
+   * @param {object} req - The request object
+   * @param {object} res - The response object
+   * @return {object} Success message with the user created or error message
+   * @memberof userController
+   */
+  static signup(req, res) {
+    return db.User
       .create({
         name: req.body.name,
         email: req.body.email,
@@ -20,9 +34,18 @@ export default {
         user
       }))
       .catch(error => res.status(400).send(error));
-  },
-  signin(req, res) {
-    return User
+  }
+  /**
+   * Register a user on the platform
+   *
+   * @static
+   * @param {object} req - The request object
+   * @param {object} res - The response object
+   * @return {object} Success message with the user created or error message
+   * @memberof userController
+   */
+  static signin(req, res) {
+    return db.User
       .findOne({
         where: {
           name: req.body.name,
@@ -43,9 +66,10 @@ export default {
               });
             }
           });
-        const token = authenticate.createToken(user);
+        const token = middleware.authenticate.createToken(user);
         res.status(200).send({ user, token });
       })
       .catch(error => res.status(400).send(error));
   }
-};
+}
+export default userController;

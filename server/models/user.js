@@ -60,6 +60,14 @@ export default (sequelize, DataTypes) => {
       foreignKey: 'userId',
       as: 'recipes'
     });
+    User.hasMany(models.Favorite, {
+      foreignKey: 'userId',
+      as: 'favorite'
+    });
+    User.hasMany(models.Review, {
+      foreignKey: 'userId',
+      as: 'review'
+    });
   };
   return User;
 };
