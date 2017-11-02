@@ -1,22 +1,39 @@
-import recipes from '../../recipes';
-
-const recipeStore = [...recipes];
-export default {
-  addReview(req, res) {
-    return new Promise((resolve) => {
-      for (let i = 0; i < recipeStore.length; i += 1) {
-        if (recipeStore[i].id === parseInt(req.params.recipeId, 10)) {
-          recipeStore[i].review.push(req.body);
-          resolve(recipeStore[i]);
-        }
+import db from '../models';
+/**
+ * Class representing controller
+ *
+ * @class reviewController
+ */
+class reviewController {
+  /**
+     * Add a review for a recipe
+     *
+     * @static
+     * @param {object} req - The request object
+     * @param {object} res - The response object
+     * @return {object} Object representing the recipe reviewed
+     * @memberof recipeController
+     */
+  static postReview(req, res) {
+    db.User.findOne({
+      where: {
+        id: req.decoded.user.id
       }
-      Promise.reject(new Error({ message: 'no review added' }));
     })
-      .then(recipe => res.status(201).send({ message: 'review added', recipe }))
-      .catch((error) => {
-        if (error.message === 'no review added') {
-          res.status(404).send({ message: 'no review added' });
-        }
-      });
+      .then(() => db.Review
+        .create({
+          userId: req.decoded.user.id,
+          recipeId: req.params.recipeId,
+          name: req.body.name,
+          content: req.body.content,
+        }))
+      .then(review => res.status(201).send({
+        status: 'Done',
+        message: 'Review created successfully',
+        name: review.name,
+        content: review.content
+      }))
+      .catch(error => res.status(400).send(error));
   }
-};
+}
+export default reviewController;
