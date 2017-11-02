@@ -4,12 +4,16 @@
   "description": "setting up backend dependencies and main entry point",
   "main": "app.js",
   "scripts": {
-    "start": "npm run build",
+    "start": "node ./build/app",
+    "build": "babel ./server -d ./build",
+    "heroku-postbuild": "npm run build && npm run migrate",
+    "migrate": "node_modules/.bin/sequelize db:migrate",
+    "unmigrate": "node_modules/.bin/sequelize db:migrate:undo:all",
     "dev": "nodemon ./bin/www --exec babel-node",
     "test": "nyc mocha --timeout 250000 --compilers js:babel-core/register tests/test.js",
     "coveralls": "nyc npm test && nyc report --reporter-text-lcov | coveralls",
-    "migrate": "sequelize db:migrate",
-    "migrate:undo": "sequelize db:migrate:undo"
+    "move": "sequelize db:migrate",
+    "move:undo": "sequelize db:migrate:undo"
   },
   "repository": {
     "type": "git",
