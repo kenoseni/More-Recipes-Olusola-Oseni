@@ -12,7 +12,7 @@ class reviewController {
      * @param {object} req - The request object
      * @param {object} res - The response object
      * @return {object} Object representing the recipe reviewed
-     * @memberof recipeController
+     * @memberof reviewController
      */
   static postReview(req, res) {
     db.User.findOne({
@@ -22,10 +22,10 @@ class reviewController {
     })
       .then(() => db.Review
         .create({
-          userId: req.decoded.user.id,
+          userId: req.decoded.userid,
           recipeId: req.params.recipeId,
           name: req.body.name,
-          content: req.body.content,
+          content: req.body.content
         }))
       .then(review => res.status(201).send({
         status: 'Done',
@@ -33,7 +33,7 @@ class reviewController {
         name: review.name,
         content: review.content
       }))
-      .catch(error => res.status(400).send(error));
+      .catch(error => res.status(500).send(error));
   }
 }
 export default reviewController;
