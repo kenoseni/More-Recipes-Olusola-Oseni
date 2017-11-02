@@ -36,7 +36,7 @@ class userController {
       .catch(error => res.status(400).send(error));
   }
   /**
-   * Register a user on the platform
+   * Signin a user on the platform
    *
    * @static
    * @param {object} req - The request object
@@ -69,6 +69,34 @@ class userController {
         const token = middleware.authenticate.createToken(user);
         res.status(200).send({ user, token });
       })
+      .catch(error => res.status(400).send(error));
+  }
+  /**
+   * get all user favorite recipes
+   *
+   * @static
+   * @param {object} req - The request object
+   * @param {object} res - The response object
+   * @returns {object} Object showing user and favorites
+   * @memberof userController
+   */
+  static getUserFavorites(req, res) {
+    return db.User
+      .findById(req.params.userId, {
+        attributes: ['name'],
+        include: [{
+          model: db.Favorite,
+          attributes: ['recipeId'],
+          include: [{
+            model: db.Recipe,
+            attributes: [
+              'name', 'ingredients', 'directions', 'time',
+              'upvotes', 'downvotes', 'views'
+            ]
+          }]
+        }],
+      })
+      .then(fav => res.status(200).send(fav))
       .catch(error => res.status(400).send(error));
   }
 }
