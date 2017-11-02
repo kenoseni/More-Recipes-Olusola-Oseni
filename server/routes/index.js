@@ -20,6 +20,7 @@ export default (app) => {
   app.post('/api/recipes/:recipeId/review', reviewController.addReview);
   app.post('/api/recipes/:recipeId/upvote', upvoteController.upVote);
   app.post('/api/recipes/:recipeId/downvote', downvoteController.downVote);
+  // signup and signin controller
   app.post('/api/v1/users/signup', signupController.signup);
   app.post('/api/v1/users/signin', signupController.signin);
 };
