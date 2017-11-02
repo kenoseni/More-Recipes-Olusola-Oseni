@@ -1,8 +1,12 @@
-const { parsed: environmentVariables } = require('dotenv').config();
+require('dotenv').config();
+// const { parsed: environmentVariables } = require('dotenv').config();
 
-const environment = environmentVariables.NODE_ENV || 'development';
+const environment = process.env.NODE_ENV || 'development';
 const dialect = 'postgres';
-const url = environmentVariables.DATABASE_URL;
+const url = process.env.DATABASE_URL;
+console.log(url);
+
+
 const devMode = environment === ('development' || 'test');
 
 const config = {
