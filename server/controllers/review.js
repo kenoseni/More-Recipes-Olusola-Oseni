@@ -17,7 +17,7 @@ class reviewController {
   static postReview(req, res) {
     db.User.findOne({
       where: {
-        id: req.decoded.user.id
+        id: req.decoded.userid
       }
     })
       .then(() => db.Review

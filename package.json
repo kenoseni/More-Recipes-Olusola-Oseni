@@ -4,7 +4,8 @@
   "description": "setting up backend dependencies and main entry point",
   "main": "app.js",
   "scripts": {
-    "start:dev": "nodemon ./bin/www --exec babel-node",
+    "start": "npm run build",
+    "dev": "nodemon ./bin/www --exec babel-node",
     "test": "nyc mocha --timeout 250000 --compilers js:babel-core/register tests/test.js",
     "coveralls": "nyc npm test && nyc report --reporter-text-lcov | coveralls",
     "migrate": "sequelize db:migrate",

@@ -1,7 +1,7 @@
 import validate from './validation';
-import authenticate from './authenticate';
+import auth from './authenticate';
 
 export default{
   validate,
-  authenticate
+  auth
 };

@@ -17,25 +17,22 @@ class recipeController {
   static addRecipe(req, res) {
     return db.Recipe
       .create({
-        userId: req.decoded.userId,
+        userId: req.decoded.userid,
         name: req.body.name,
         ingredients: req.body.ingredients,
         directions: req.body.directions,
-        upvotes: req.body.upvotes,
-        downvotes: req.body.downvotes
+        time: req.body.time
       })
       .then(recipe => recipe.increment('views'))
       .then(recipe => res.status(201).send({
         status: 'Done',
         message: 'Recipe created successfully',
-        Id: recipe.Id,
+        Id: recipe.id,
         userId: recipe.userId,
         name: recipe.name,
         ingredients: recipe.ingredients,
         directions: recipe.directions,
-        upvotes: recipe.upvotes,
-        downvotes: recipe.downvotes,
-        views: recipe.views
+        time: req.body.time
       }))
       .catch(error => res.status(400).send(error));
   }
@@ -47,30 +44,32 @@ class recipeController {
      * @param {object} res - The response object
      * @return {object} Object representing the recipe modified
      * @memberof recipeController
-     */
+     */ 
   static modify(req, res) {
     return db.Recipe
       .find({
         where: {
           id: req.params.recipeId,
-          userId: req.decoded.user.id,
+          userId: req.decoded.userid,
         },
       })
       .then(recipe => recipe
         .update({
-          name: req.body.title,
+          name: req.body.name,
           ingredients: req.body.ingredients,
-          directions: req.body.directions
+          directions: req.body.directions,
+          time: req.body.time
         }))
-      .then(modifiedRecipe => res.status(200).send({
+      .then(modifiedRecipe => res.status(200).json({
         status: 'Done',
         message: 'Recipe modified successfully',
         id: modifiedRecipe.id,
         name: modifiedRecipe.title,
         ingredients: modifiedRecipe.ingredients,
         directions: modifiedRecipe.directions,
+        time: modifiedRecipe.time
       }))
-      .catch(error => res.status(400).send(error));
+      .catch(error => res.status(500).send(error));
   }
   /**
        * Delete a recipe added
@@ -86,7 +85,7 @@ class recipeController {
       .find({
         where: {
           id: req.params.recipeId,
-          userId: req.decoded.user.id,
+          userId: req.decoded.userid,
         }
       })
       .then(recipe => recipe.destroy())
