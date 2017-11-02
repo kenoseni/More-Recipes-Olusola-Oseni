@@ -20,7 +20,7 @@ router.get('/recipes', controllers.recipeController.getAllRecipes);
 // Allow user post review on a recipe
 router.post('/recipes/:recipeId/reviews', middleware.authenticate.confirmToken, controllers.reviewController.postReview);
 // Add favorite recipes
-router.get('/users/:userId/recipes', middleware.authenticate.confirmToken, controllers.favoriteController.addUserFavorite);
+router.post('/users/:userId/recipes', middleware.authenticate.confirmToken, controllers.favoriteController.addUserFavorite);
 // Delete favorite recipes
-router.get('/users/:userId/recipes', middleware.authenticate.confirmToken, controllers.favoriteController.removeUserFavorite);
+router.delete('/users/:userId/recipes', middleware.authenticate.confirmToken, controllers.favoriteController.removeUserFavorite);
 export default router;
