@@ -59,7 +59,7 @@ class favoriteController {
       .then(favorite => favorite
         .destroy())
       .then(() => res.status(200).send({
-        status: 'success',
+        status: 'Done',
         message: 'Recipe removed from favorites'
       }))
       .catch(error => res.status(400).send(error));
