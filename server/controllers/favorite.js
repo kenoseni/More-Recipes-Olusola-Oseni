@@ -5,7 +5,7 @@ import db from '../models';
  *
  * @class favoriteController
  */
-class favoriteController {
+class favController {
   /**
      * Add a review for a recipe
      *
@@ -59,10 +59,10 @@ class favoriteController {
       .then(favorite => favorite
         .destroy())
       .then(() => res.status(200).send({
-        status: 'Done',
+        status: 'Success',
         message: 'Recipe removed from favorites'
       }))
       .catch(error => res.status(400).send(error));
   }
 }
-export default favoriteController;
+export default favController;

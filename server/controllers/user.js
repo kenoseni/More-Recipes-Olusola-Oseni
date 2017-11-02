@@ -28,12 +28,12 @@ class userController {
         email: req.body.email,
         password: req.body.password
       })
-      .then(user => res.status(201).send({
+      .then(user => res.status(201).json({
         status: 'success',
-        message: 'User successfully signed up',
-        user
+        message: `User with userId: ${user.id} was successfully signed up`,
+
       }))
-      .catch(error => res.status(400).send(error));
+      .catch(error => res.status(500).send(error));
   }
   /**
    * Signin a user on the platform
@@ -48,7 +48,7 @@ class userController {
     return db.User
       .findOne({
         where: {
-          name: req.body.name,
+          email: req.body.email,
         }
       })
       .then((user) => {
@@ -65,10 +65,29 @@ class userController {
                 message: 'Incorrect password'
               });
             }
+            const token = middleware.auth.createToken(user);
+            return res.status(200).json({ token });
           });
-        const token = middleware.authenticate.createToken(user);
-        res.status(200).send({ user, token });
       })
+      .catch(error => res.status(500).send(error));
+  }
+  /**
+   * get all users
+   *
+   * @static
+   * @param {object} req - The request object
+   * @param {object} res - The response object
+   * @return {object} return a json object of all users
+   * @memberof userController
+   */
+  static getUsers(req, res) {
+    return db.User
+      .findAll({
+        attributes: [
+          'id', 'name', 'email'
+        ]
+      })
+      .then(user => res.status(200).send(user))
       .catch(error => res.status(400).send(error));
   }
   /**

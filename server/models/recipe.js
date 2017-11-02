@@ -8,10 +8,6 @@ export default (sequelize, DataTypes) => {
           args: true,
           msg: 'Recipe name cannot be empty'
         },
-        isAlphanumeric: {
-          args: true,
-          msg: 'Allows only alphanumeric characters'
-        },
         set(value) {
           this.setDataValue('name', value.toString().toLowerCase().trim());
         }
@@ -25,10 +21,6 @@ export default (sequelize, DataTypes) => {
           args: true,
           msg: 'List of ingredients cannot be empty'
         },
-        isAlphanumeric: {
-          args: true,
-          msg: 'Allows only alphanumeric characters'
-        },
       }
     },
     directions: {
@@ -38,10 +30,6 @@ export default (sequelize, DataTypes) => {
         notEmpty: {
           args: true,
           msg: 'List of ingredients cannot be empty'
-        },
-        isAlphanumeric: {
-          args: true,
-          msg: 'Allows only alphanumeric characters'
         },
       }
     },
