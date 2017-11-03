@@ -1,40 +1,4 @@
-html,
-body,
-header,
-#intro {
-    height: 97%;
-}
-
-#intro {
-    background: url("../img/zucchini pasta (2).jpg")no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.modal-dialog {
-    margin-top: 8%;
-}
-
-#slogan, #pagetitle, .hr-light {
-    color:#fff;
-}
-
-@media(min-width:1200px) {
-    #pagetitle {
-        margin-top: 40%
-    }
-}
-
-
-nav {
-    background-color: #002236;
-}
-
-.btn-default {
-    background-color: #002236;
-}
+/* YOUR CUSTOM STYLES */
 h1, h2, h3, h4, h5, h6, a {
 	margin: 0;
 	padding: 0;
@@ -42,14 +6,72 @@ h1, h2, h3, h4, h5, h6, a {
 	font-weight: normal;
 }
 
-.avatar-pic {
-    width: 50px; 
+
+nav {
+    background-color: #007E33;
+    box-sizing: content-box;
+  
 }
 
-a:hover, #home:hover, #catalog:hover, #signin:hover {
+.container {
+    margin-top: 10%
+}
+#info {
+    margin-top: 5%
+}
+
+.carousel-inner {
+    width: auto;
+    height: auto;
+}
+
+@media(min-width:1200px) {
+    #recipecarousel {
+       max-width : 100%;
+        height: 500px;
+    }
+}
+
+a:hover, #home:hover, #catalog:hover{
     opacity: 0.3;
 }
 
-.card {
-    margin-top: 15%;
+img:hover {
+    opacity: 0.9;
 }
+img {
+    width: 600px
+}
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+textarea {
+    width: 280px;
+}
+
+.page-footer, .footer-copyright {
+    background-color: #002236;
+}
+
+.imgsize {
+    max-width: 17%
+}
+
+.carousel {
+    padding-top: 70px
+
+}.modal-dialog {
+    margin-top: 5%;
+}
+
+footer .footer-copyright .page-footer {
+    color: #002236;
+}
+
+a {
+    color: #000
+}
+

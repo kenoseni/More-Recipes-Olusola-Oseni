@@ -1,165 +1,552 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>More Recipes</title>
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        
-        <!-- Your custom styles -->
-        <link href="css/style.css" rel="stylesheet">
-        
-    </head>
 
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark flex-row">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>More Recipes</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
 
-            <div class="container">
-                <!-- Navbar brand -->
-                <a class="navbar-brand text-white" href="index.html"><i class="fa fa-cutlery" aria-hidden="true"></i></a>
-                <!-- Collapse button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Collapsible content -->
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <!-- Links -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a  id="home" class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                            
-                        <li class="nav-item">
-                            <a id="catalog" class="nav-link" href="catalog.html">Catalog</a>
-                        </li>
+<body>
 
-                    </ul>
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="text" placeholder="find recipes" aria-label="Search">
-                        
-                    </form>
+    <!--Main Navigation-->
+    <header>
+        <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark  smooth-scroll fixed-top">
+        <div class="container">
 
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#logIn"><h5>Log In</h5></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#signUp"><h5>Sign Up</h5></a>
-                        </li>
-                    </ul>
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#"><i class="fa fa-cutlery" aria-hidden="true"></i> <i>More </i>Recipes</h5></i></a>
 
-                </div>
-                <!-- End of Collapsible content -->
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+            </button>
 
-            </div>
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Links -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="favorite.html">Favorite</a>
+                    </li>
                     
-        </nav>
-        <!--Mask-->
-        <div  id="intro" class="view hm-black-light">
-                
-            <div class="container-fluid full-bg-img d-flex align-items-center justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="AllRecipes.html">Recipes</a>
+                    </li>
 
-                <div class="row d-flex justify-content-center">
+                </ul>
+                <!-- Links -->
 
-                    <div class="col-md-12 text-center">
-                        <!-- Heading -->
-                        <h2 id="pagetitle" class="display-3 font-bold mb-2"><i>More</i> Recipes</h2>
-                        <!-- Divider -->
-                        <hr class="hr-light">
-    
-                        <!-- Description -->
-                        <h5 id="slogan" class="my-3 text-center">Every bite, a promise kept</h5>
-                        <button type="button" class="btn btn-outline-white btn-lg">Read more<i class="fa fa-book ml-2"></i></button>
-                    </div>
-                </div>
+                <!-- Search form -->
+                <form class="form-inline">
+                    <i class="fa fa-search fa-lg white"></i>
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search for recipes" aria-label="Search">
+                    
+                </form>
+
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-toggle="modal" data-target="#logIn"><h5>Log In</h5></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-toggle="modal" data-target="#signUp"><h5>Sign Up</h5></a>
+                    </li>
+                </ul>
             </div>
+            <!-- Collapsible content -->
 
         </div>
-        <!--/.Mask-->
-
-        <div class="container">            
-            <!--Login Modal -->
-            <div class="modal fade" id="logIn" role="dialog">
-                <div class="modal-dialog modal-md">               
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 id="signin" class="modal-title font-weight-bold">Log In</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">            
-                            <form action="" method="POST" role="form">         
-                                <div class="form-group"> 
-                                    <label class="control-label font-weight-bold" for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email: </label>
-                                    <input type="email" class="form-control" id="" placeholder="username@domain.com" autofocus required>
-                                        
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label font-weight-bold" for="password"><i class="fa fa-lock" aria-hidden="true"></i> Password: </label>
-                                    <input type="password" class="form-control" id="" required>
-                                </div>
-                                                
-                                <button type="submit" class="btn btn-success">Log In</button>
-                            </form>
-                                                
-                        </div> 
-                        <div class="modal-footer">
-                            <p><h6 id="join">Not a member? <a href="#" data-toggle="modal" data-target="#signUp" data-dismiss="modal">Sign Up</h6></a></p>
-                            <p><h6>Forgot <a href="#" data-toggle="modal" data-target="">Password?</h6></a></p>
-                        </div>    
-                                        
+    </nav>
+    <!--/.Navbar-->
+<div class-"container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <!--Carousel Wrapper-->
+<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" data-wrap="true">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+        </ol>
+        <!--/.Indicators-->
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+            <!--First slide-->
+            <div class="carousel-item active">
+                <div class="view overlay hm-black-slight">
+                    <img class="d-block w-100 img-fluid" src="./img/chocolate caramel brownies.jpg" alt="First slide" >
+                    <div class="mask"></div>
+                </div>
+                <!--Caption-->
+                <div class="carousel-caption">
+                    <div class="animated fadeInDown">
+                        <h2 class="h2-responsive">Life Tastes Better</h2>
+                        <p> <h5>with <i>more recipes</i></h5></p>
                     </div>
                 </div>
-                            
+                <!--Caption-->
             </div>
-        </div>
-    
-        <div class="container">            
-            <!-- Sign Up Modal -->
-            <div class="modal fade" id="signUp" role="dialog">
-                <div class="modal-dialog modal-md">      
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title text-center font-weight-bold">Sign Up</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>   
+            <!--/First slide-->
+            <!--Second slide-->
+            <div class="carousel-item">
+                <div class="view overlay hm-black-slight">
+                    <img class="d-block w-100 img-fluid" src="./img/recipe5.jpeg" alt="Second slide">
+                    <div class="mask"></div>
+                </div>
+                <!--Caption-->
+                <div class="carousel-caption">
+                        <div class="animated fadeInDown">
+                            <h2 class="h2-responsive">Every Bite</h2>
+                            <p> <h5><i>a promise kept</i></h5></p>
                         </div>
-                        <div class="modal-body">       
-                            <form action="" method="POST" role="form">
-                                <div class="form-group">
-                                    <label for="name" class="font-weight-bold"><i class="fa fa-user" aria-hidden="true"></i> Full Name:</label>
-                                    <input type="text" class="form-control" id="" placeholder="please enter your name" autofocus required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="font-weight-bold"><i class="fa fa-envelope" aria-hidden="true"></i> Email:</label>
-                                    <input type="email" class="form-control" id="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="font-weight-bold"><i class="fa fa-lock" aria-hidden="true"></i> Password:</label>
-                                    <input type="password" class="form-control" id="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="font-weight-bold"><i class="fa fa-lock" aria-hidden="true"></i> Retype Password:</label>
-                                    <input type="password" class="form-control" id="" required>
-                                </div>
-                                            
-                                <button type="submit" class="btn btn-success">Sign Up</button>
-                            </form>            
-                        </div>            
+                </div>
+                <!--Caption-->
+            </div>
+            <!--/Second slide-->
+            <!--Third slide-->
+            
+            <div class="carousel-item">
+                <div class="view overlay hm-black-slight">
+                    <img class="d-block w-100 img-fluid" src="./img/recipe3.jpg" alt="Third slide">
+                    <div class="mask"></div>
+                </div>
+                <!--Caption-->
+                <div class="carousel-caption">
+                    <div class="animated fadeInDown">
+                        <h2 class="h2-responsive">I am not a glutton</h2>
+                        <p> <h5>I am an <i>explorer of good food</i></h5></p>
                     </div>
+                </div>
+                    <!--Caption-->
+
+            </div>
+            <!--/Third slide-->
+        </div>
+        <!--/.Slides-->
+        <!--Controls-->
+        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
+    </div>
+    <!--/.Carousel Wrapper-->
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+    
+
+
+<div class="container">            
+    <!--Login Modal -->
+    <div class="modal fade" id="logIn" role="dialog">
+        <div class="modal-dialog modal-md">               
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="signin" class="modal-title font-weight-bold">Log In</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">            
+                    <form action="" method="POST" role="form">         
+                        <div class="form-group"> 
+                            <label class="control-label font-weight-bold" for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email: </label>
+                            <input type="email" class="form-control" id="" placeholder="username@domain.com" autofocus required>
+                                
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label font-weight-bold" for="password"><i class="fa fa-lock" aria-hidden="true"></i> Password: </label>
+                            <input type="password" class="form-control" id="" required>
+                        </div>
+                                        
+                        <button type="submit" class="btn btn-success">Log In</button>
+                    </form>
+                                        
                 </div> 
+                <div class="modal-footer">
+                    <p><h6 id="join">Not a member? <a href="#" data-toggle="modal" data-target="#signUp" data-dismiss="modal">Sign Up</h6></a></p>
+                    <p><h6>Forgot <a href="#" data-toggle="modal" data-target="">Password?</h6></a></p>
+                </div>    
+                                
             </div>
         </div>
+                    
+    </div>
+</div>
 
-        <!-- SCRIPTS -->
-        <!-- JQuery -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<div class="container">            
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signUp" role="dialog">
+        <div class="modal-dialog modal-md">      
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-center font-weight-bold">Sign Up</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>   
+                </div>
+                <div class="modal-body">       
+                    <form action="" method="POST" role="form">
+                        <div class="form-group">
+                            <label for="name" class="font-weight-bold"><i class="fa fa-user" aria-hidden="true"></i> Full Name:</label>
+                            <input type="text" class="form-control" id="" placeholder="please enter your name" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="font-weight-bold"><i class="fa fa-envelope" aria-hidden="true"></i> Email:</label>
+                            <input type="email" class="form-control" id="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="font-weight-bold"><i class="fa fa-lock" aria-hidden="true"></i> Password:</label>
+                            <input type="password" class="form-control" id="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="font-weight-bold"><i class="fa fa-lock" aria-hidden="true"></i> Retype Password:</label>
+                            <input type="password" class="form-control" id="" required>
+                        </div>
+                                    
+                        <button type="submit" class="btn btn-success">Sign Up</button>
+                    </form>            
+                </div>            
+            </div>
+        </div> 
+    </div>
+</div>
+<main class="mt-4 pt-4">
+    <!--Main container-->
+    
+    <div class="container">
+        <!--Grid row-->
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <!--Card-->
+                <div class="card w-40">
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="img/jollof rice.jpg" class="img-fluid" alt="jollof rice and chicken"  style="width:100%; height:250px;">
+                    </div>
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h5 class="card-title font-weight-bold text-center">Jollof Rice and Chicken</h6>
+                        <!--Text-->
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <!--Card-->
+                <div class="card w-40">     
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="./img/pounded yam and egusi.jpg" class="img-fluid" alt="pounded yam and egusi" style="width:100%; height:250px;">
+                    </div>
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h5 class="card-title font-weight-bold text-center">Pounded Yam and Egusi</h5>
+                        <!--Text-->
+                        <p class="card-text"></p>
+                    </div>
+                    
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card w-40">  
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="img/warm-peanut-butter-bananas.jpg" class="img-fluid" alt="warm peanut butter and bananas" style="width:100%; height:250px;">
+                    </div>   
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h5 class="card-title font-weight-bold text-center">Warm Peanut Butter Bananas</h5>
+                        <!--Text-->
+                        <p class="card-text"></p>
+                    </div>     
+                </div>
+                <!--/.Card-->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card">           
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="img/juicy roasted chicken.jpg" class="img-fluid" alt="juicy roasted chiken" style="width:100%; height:250px;">    
+                    </div>    
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h5 class="card-title font-weight-bold text-center">Juicy Roasted Chicken</h5>
+                        <!--Text-->
+                        <p class="card-text"></p>   
+                    </div>              
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <!--Card-->
+                <div class="card">
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="img/ham tetrazzini.jpg" class="img-fluid" alt="ham tetrazzini" style="width:100%; height:250px;">
+                    </div>
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h5 class="card-title font-weight-bold text-center">Ham Tetrazzini</h5> 
+                        <!--Text-->
+                        <p class="card-text"></p>       
+                    </div>
+                
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--Grid column-->
         
-    </body>
+            <!--Grid column-->
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <!--Card-->
+                <div class="card">    
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="img/fried rice with chicken.jpg" class="img-fluid" alt="fried rice and chicken" style="width:100%; height:250px;">    
+                    </div>  
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h5 class="card-title font-weight-bold text-center">Fried Rice and Chicken</h5>
+                        <!--Text-->
+                        <p class="card-text"></p>
+                    </div>       
+                </div>
+                <!--/.Card--> 
+            </div>
+            <!--Grid column-->
+        
+            <!--Grid column-->
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card">         
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="img/white rice with tilapia.jpg" class="img-fluid" alt="white rice and tilapia" style="width:100%; height:250px;"> 
+                    </div>     
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h5 class="card-title font-weight-bold text-center">White Rice and Tilapia</h5>
+                        <!--Text-->
+                        <p class="card-text"></p>   
+                    </div>
+                                
+                </div>
+                <!--/.Card-->
+        
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card">             
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="img/VegetableSoup.jpg" class="img-fluid" alt="homemade vegetable soup" style="width:100%; height:250px;">    
+                    </div>
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h5 class="card-title font-weight-bold text-center">Homemade Vegetable Soup</h5>
+                        <!--Text-->
+                        <p class="card-text"></p>           
+                    </div>                        
+                </div>
+                <!--/.Card--> 
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row">
+        
+            <!--Grid column-->
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <!--Card-->
+                <div class="card">
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="img/chickenApplePasta.jpg" class="img-fluid" alt="chicken apple pasta" style="width:100%; height:250px;">
+                            
+                    </div>
+                    <!--Card content-->
+                <div class="card-body">
+                    <!--Title-->
+                    <h5 class="card-title font-weight-bold text-center">Chicken Apple Pasta</h5>
+                    <!--Text-->
+                    <p class="card-text"></p>       
+                </div>
+                
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--Grid column-->
+        
+            <!--Grid column-->
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <!--Card-->
+                <div class="card">
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="img/image2.jpg" class="img-fluid" alt="chips and sandwich" style="width:100%; height:250px;">
+                    </div>   
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h5 class="card-title font-weight-bold text-center">Chips and Sandwich</h5>
+                        <!--Text-->
+                        <p class="card-text"></p>      
+                    </div>        
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--Grid column-->
+        
+            <!--Grid column-->
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card">       
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="img/chocolate caramel.jpg" class="img-fluid" alt="chocolate caramel brownies" style="width:100%; height:250px;">
+                    </div>    
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h5 class="card-title font-weight-bold text-center">Chocolate Caramel Brownies</h5>
+                        <!--Text-->
+                        <p class="card-text"></p>
+                    </div>          
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card">             
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="img/spaghetti with bacon.jpg" class="img-fluid" alt="spaghetti and bacon" style="width:100%; height:250px;">
+                    </div>  
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h5 class="card-title font-weight-bold text-center">Spaghetti and Bacon</h5>
+                        <!--Text-->
+                        <p class="card-text"></p>
+                    </div>                     
+                </div>
+            <!--/.Card-->       
+        </div>
+        <!--Grid column-->
+    </div>
+    <!--Grid row-->
+    </div>
+</div>
+<!--Main container-->
+</main>
+ <!--Footer-->
+ <footer class="page-footer green center-on-small-only pt-0">
+    
+        <!--Footer Links-->
+        <div class="container">
+    
+            <!--First row-->
+            <div class="row">
+    
+                <!--First column-->
+                <div class="col-md-12">
+    
+                    <div class="footer-socials mb-5 flex-center">
+    
+                        <!--Facebook-->
+                        <a class="icons-sm fb-ic"><i class="fa fa-facebook fa-lg white-text mr-md-4"> </i></a>
+                        <!--Twitter-->
+                        <a class="icons-sm tw-ic"><i class="fa fa-twitter fa-lg white-text mr-md-4"> </i></a>
+                        <!--Google +-->
+                        <a class="icons-sm gplus-ic"><i class="fa fa-google-plus fa-lg white-text mr-md-4"> </i></a>
+                        <!--Linkedin-->
+                        <a class="icons-sm li-ic"><i class="fa fa-linkedin fa-lg white-text mr-md-4"> </i></a>
+                        <!--Instagram-->
+                        <a class="icons-sm ins-ic"><i class="fa fa-instagram fa-lg white-text mr-md-4"> </i></a>
+                        <!--Pinterest-->
+                        <a class=""><i></i></a>
+                    </div>
+                </div>
+                <!--/First column-->
+            </div>
+            <!--/First row-->
+        </div>
+        <!--/Footer Links-->
+    
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                © 2017 Copyright: <a href="index.html"> MoreRecipes.com </a>
+            </div>
+        </div>
+        <!--/Copyright-->
+    
+    </footer>
+    <!--/Footer-->
+
+   
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/myFile.js"></script>
+</body>
 
 </html>
