@@ -7,7 +7,7 @@
     "node": "7.7.4"
   },
   "scripts": {
-    "start": "node ./build/app",
+    "start": "node ./build/app.js",
     "build": "babel ./server -d ./build",
     "migrate": "sequelize db:migrate",
     "post-install": "npm run build && npm run migrate",
