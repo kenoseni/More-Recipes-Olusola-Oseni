@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "setting up backend dependencies and main entry point",
   "main": "app.js",
+  "engines": {
+    "node": "7.7.4"
+  },
   "scripts": {
     "start": "node ./build/app",
     "build": "babel ./server -d ./build",
